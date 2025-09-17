@@ -69,7 +69,7 @@ def escola():
                         "8 - Ensino Tecnico\n")
                         escolha = int(input("Digite o número para escolher a materia: "))
                         if(escolha == 1):
-                            print("Cadastrado com sucesso!, bem vindo professor(a) de matemática", nome)
+                            print("Cadastrado com sucesso!, bem vindo professor(a) de matemática", 
                         if(escolha == 2):
                             print("Cadastrado com sucesso!, bem vindo professor(a) de português", nome)
                         if(escolha == 3):
@@ -150,6 +150,3 @@ def escola():
 
         
 escola()
-
-  git config --global user.email "joaomarcoduarte149@gmail.com"
-  git config --global user.name "MarcoD-S"
