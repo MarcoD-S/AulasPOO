@@ -4,7 +4,7 @@ class Carro:
         self.modelo = modelo
         self.ano = ano
         self.cor = cor
-        self.velocidade = 0
+        self.velocidade = velocidade = 0
 
     def acelerar(self, valor):
         self.velocidade += valor
@@ -14,7 +14,10 @@ class Carro:
         self.velocidade -= valor
         if self.velocidade < 0:
             self.velocidade = 0
-        print(f"{self.marca} {self.modelo} ({self.ano} -"
+        print(f"{self.modelo} reduziu para {self.velocidade} km/h!")
+
+    def detalhes(self):
+        return (f"{self.marca} {self.modelo} ({self.ano} -"
               f"Cor: {self.cor}, Velocidade: {self.velocidade} km/h")
         
 #Criando Objetos
