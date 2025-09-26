@@ -38,5 +38,7 @@ print(moto2.detalhes())
     
 if moto1.velocidade > moto2.velocidade:
     print("A BMW ganhou a corrida!")
+else:
+    print("A kawasaki ganhou a corrida!")
 
     
