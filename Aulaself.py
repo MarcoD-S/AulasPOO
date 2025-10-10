@@ -18,3 +18,5 @@ class Cruzeiro:
 
 cz = Cruzeiro()
 print(cz.info())
+
+#OI
