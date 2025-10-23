@@ -8,7 +8,16 @@ class Pessoa:
 
 
 class Aluno(Pessoa):
-    def __init__(self, nome: str, matricula: str, cpf: str) -> None:
+    def __init__(self, nome = None, matricula = None, cpf = None):
+        print("-------- Aluno --------")
+        if nome is None:
+            nome = input("Digite o seu nome: ")
+        if matricula is None:
+            matricula = input("Digite a sua matricula: ")
+        if cpf is None:
+            cpf = input("Digite o seu cpf: ")
+        print()
+
         super().__init__(nome, cpf) # Chama o __init__ da classe Pessoa
         self.matricula = matricula
 
@@ -19,16 +28,19 @@ class Aluno(Pessoa):
 
 class Professor(Aluno):
     def __init__(self, nome = None, matricula = None, cpf = None, materia = None):
+        print("-------- Professor --------")
         if nome is None:
             nome = input("Digite o seu nome: ")
         if matricula is None:
             matricula = input("Digite a sua matricula: ")
         if cpf is None:
-            cpf = input("Digite o seu cpf")
+            cpf = input("Digite o seu CPF: ")
         if materia is None:
             materia = input("Digite o seu materia: ")
+        print(
 
-        super().__init__(nome, matricula, cpf)
+        )
+        super().__init__(nome, matricula, cpf) # Chama o __init__ da classe Aluno
         self.materia = materia
 
     def apresentar(self) -> str:
@@ -38,7 +50,7 @@ class Professor(Aluno):
 
 # Programa principal
 pessoa = Pessoa("João", "123.456.789.00")
-aluno = Aluno("Ana", "A123", "123.456.789.00")
+aluno = Aluno()
 professor = Professor()
 
 print(pessoa.apresentar())
