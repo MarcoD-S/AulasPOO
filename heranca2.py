@@ -8,7 +8,8 @@ class Musica:
         return f"O nome da musica é {self.nome_music} e tem uma duracao de {self.duracao}min."
     
 class Artista(Musica):
-    def __init__(self, nome_artist = None, nome_music= None, duracao = None):
+    def __init__(self, nome_artist = None, nome_music= None, duracao = None, nome_comp = None):
+        print("------------- Artista --------------")
         if nome_artist is None:
             nome_artist = input("Digite o nome do artista: ")
         if nome_music is None:
@@ -16,24 +17,29 @@ class Artista(Musica):
         if duracao is None:
             duracao = input("Qual a duração da musica?: ")
         
-        super().__init__(nome_music, duracao)
-        self.nome_artist = nome_artist
-    
-
-class Compositor(Artista):
-    def __init__(self, nome_artist = None, nome_comp = None):
+        print("------------- Compositor --------------")
         if nome_comp is None:
             nome_comp = input("Quem compôs a musica?: ")
-
-        super().__init__(nome_artist)
+        
+        super().__init__(nome_music, duracao)
+        self.nome_artist = nome_artist
         self.nome_comp = nome_comp
+    
 
-    def info(self) -> str:
+class Album(Artista):
+    def __init__(self, nome_artist = None, nome_music= None, duracao = None, nome_comp = None, nome_album = None):
+        print("------------- Album --------------")
+        if nome_album is None:
+            nome_album = input("Digite o nome do album: ")
+        
+        super().__init__(nome_artist, nome_comp, nome_music, duracao)
+        self.nome_album = nome_album
+        
+    def info(self) ->str:
         base = super().info()
-        return f"O nome da musica é {self.nome_music}, o artista é {self.nome_artist} e o compositor(a) da musica é {self.nome_comp}"
+        return f"{base} O artista é o(a) {self.nome_artist} e o compositor é o {self.nome_comp}, o nome do album que essa musica é {self.nome_album}."
 
-artista = Artista()
-compositor = Compositor()
+    
+album = Album()
 
-print(artista.info())
-print(compositor.info())
+print(album.info())
