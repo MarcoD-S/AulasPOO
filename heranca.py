@@ -44,13 +44,13 @@ class Professor(Aluno):
         self.materia = materia
 
     def apresentar(self) -> str:
-        base = super().apresentar()
+        base = super().apresentar() # Usa o metodo da classe Aluno
         base = Pessoa.apresentar(self)
         return f"{base} e eu sou professor de {self.materia}"
 
 
 # Programa principal
-pessoa = Pessoa("João", "123.456.789.00")
+pessoa = Pessoa("João", "123.456.789.01")
 aluno = Aluno()
 professor = Professor()
 
