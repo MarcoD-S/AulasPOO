@@ -44,8 +44,7 @@ class Professor(Aluno):
         self.materia = materia
 
     def apresentar(self) -> str:
-        # Call Pessoa.apresentar directly to avoid inheriting Aluno's
-        # `apresentar` output (which already adds "sou aluno...").
+        base = super().apresentar()
         base = Pessoa.apresentar(self)
         return f"{base} e eu sou professor de {self.materia}"
 
