@@ -13,6 +13,7 @@ class Artista(Musica):
         if nome_artist is None:
             nome_artist = input("Digite o nome do artista: ")
         if nome_music is None:
+            print("------------- Musica --------------")
             nome_music = input("Digite o nome da musica: ")
         if duracao is None:
             duracao = input("Qual a duração da musica?: ")
