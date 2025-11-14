@@ -5,7 +5,7 @@ class Time:
         self.torcida = torcida
     
     def info(self) -> str:
-        return f"\nBem vindo(a) jogador(a) {self.nomeJog} do time {self.nomeTime}, camisa {self.numero} que joga na {self.posicao}. Um time que tem {self.idadeCB} anos e {self.torcida} mil torcedores!"
+        return f"\nBem vindo(a) jogador(a) {self.nomeJog} do time {self.nomeTime}, camisa {self.numero} que joga na posição de {self.posicao}. Um time que tem {self.idadeCB} anos e {self.torcida} mil torcedores!"
     
 class Jogador(Time):
     def __init__(self, nomeJog = None, posicao = None, numero = None, nomeTime = None, idadeCB = None, torcida = None):
@@ -21,7 +21,7 @@ class Jogador(Time):
         if nomeTime is None:
             nomeTime = input("Digite o nome do time do jogador: ")
         if idadeCB is None:
-            idadeCB = input("Digite a idade do time do jogador: ")
+            idadeCB = input("Digite a idade do time: ")
         if torcida is None:
             torcida = input("Digite a quantidade de torcedores do time (casa dos milhares): ")
         
@@ -30,27 +30,35 @@ class Jogador(Time):
         self.posicao = posicao
         self.numero = numero
 
-        if posicao == "Atacante":
-            class Atacante:
-                def __init__(self, nomeJog):
-                    self.nomeJog = nomeJog
+        print("Temos uma partida para jogar, você quer jogar?\n")
+        escolha = input("Digite S para sim e N para não: ")
 
-                def chutar(self):
-                    print(f"O Atacante {self.nomeJog} chutou a bola no angulo!")
+        if escolha == "S" or "s":
+            if posicao == "Atacante" or "atacante" or "ATACANTE": 
+                class Atacante:
+                    print("Bora pra jogo meu atacante!")
 
-            def chutar_gol(obj):
-                obj.chutar()
+                    def __init__(self, nomeJog):
+                        self.nomeJog = nomeJog
 
-            a = Atacante(self.nomeJog)
-            chutar_gol(a)
+                    def chutar(self):
+                        print(f"O Atacante {self.nomeJog} chutou a bola no angulo!")
 
-        if posicao == "Ponta":
-            class Ponta:
-                def __init__(self, nomeJog):
-                    self.nomeJog = nomeJog
+                def chutar_gol(obj):
+                    obj.chutar()
 
-                def passar(self):
-                    return f"O Jogador da ponta {self.nomeJog} driblou e passou a bola"
+                a = Atacante(self.nomeJog)
+                chutar_gol(a)
 
+            if posicao == "Ponta":
+                class Ponta:
+                    def __init__(self, nomeJog):
+                        self.nomeJog = nomeJog
+
+                    def passar(self):
+                        return f"O Jogador da ponta {self.nomeJog} driblou e passou a bola"
+        if escolha == "N" "n":
+            print("Jogador fraco kkkkkkkk")
+            
 jogador = Jogador()
-print(jogador.info())
+
