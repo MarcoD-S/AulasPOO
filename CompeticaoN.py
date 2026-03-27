@@ -69,7 +69,7 @@ def escola():
                         "8 - Ensino Tecnico\n")
                         escolha = int(input("Digite o número para escolher a materia: "))
                         if(escolha == 1):
-                            print("Cadastrado com sucesso!, bem vindo professor(a) de matemática", 
+                            print("Cadastrado com sucesso!, bem vindo professor(a) de matemática", nome)
                         if(escolha == 2):
                             print("Cadastrado com sucesso!, bem vindo professor(a) de português", nome)
                         if(escolha == 3):
@@ -148,5 +148,6 @@ def escola():
             exit()
              
 
-        
 escola()
+
+
